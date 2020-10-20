@@ -1,3 +1,4 @@
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import java.util.*;
@@ -7,12 +8,12 @@ public class AreaCheckServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
+        ServletContext context = req.getServletContext();
         resp.setContentType("text/html;charset=UTF-8");
-        List<String> tableRows = (List) session.getAttribute("tableRows");
+        List<String> tableRows = (List) context.getAttribute("tableRows");
         if (tableRows == null) {
             tableRows = new ArrayList<String>();
-            session.setAttribute("tableRows", tableRows);
+            context.setAttribute("tableRows", tableRows);
             tableRows.add("<table id='outputTable'><tr>" +
                     "<th>x</th>" +
                     "<th>y</th>" +

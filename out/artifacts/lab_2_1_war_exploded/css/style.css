@@ -10,7 +10,12 @@ html, body{
 }
 
 body {
+    background: linear-gradient(45deg, #d9a7c7, #fffcdc);
+    background-size: 1000% 1000%;
+    animation: gradient 10s ease infinite;
+
     width: 100%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
@@ -29,13 +34,17 @@ header {
 
 main {
     flex: 1 0 auto;
+    margin: auto;
     min-height: 82%;
-    width: 100%;
+    width: max-content;
+    align-content: center;
 }
 
 footer {
     flex: 1 0 auto;
+    align-self: center;
     width: 100%;
+    height: max-content;
     background-color: crimson;
     font-style: italic;
     font-family: "Rage Italic";
@@ -46,11 +55,6 @@ footer {
 }
 
 /*Параметры для ссылок, изображений и таблиц*/
-main {
-    background: linear-gradient(45deg, #d9a7c7, #fffcdc);
-    background-size: 200% 200%;
-    animation: gradient 10s ease infinite;
-}
 
 input {
     width: 75%;
@@ -62,7 +66,15 @@ a {
     transition: all.6s ease-out;
 }
 
+tr{
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+}
+
 td {
+    margin-right: auto;
+    margin-left: auto;
     width: max-content;
 }
 
@@ -98,8 +110,8 @@ img {
     width: 8%;
     cursor: pointer;
     padding: 6px;
-    margin-top: 4px;
-    margin-bottom: 20px;
+    margin-top: .1%;
+    margin-bottom: .5%;
     transition: .2s;
     background: transparent;
 }
@@ -110,7 +122,7 @@ img {
 }
 
 .box {
-    width: 400px;
+    width: 100%;
     padding: 4%;
     text-align: center;
 }
@@ -163,6 +175,11 @@ img {
     display: none;
 }
 
+.outputContainer{
+    margin: auto;
+    text-align: center;
+}
+
 .unique-checkbox + .unique-label:before {
     content:"\2714";
     border: .1em solid #330066;
@@ -210,8 +227,8 @@ img {
     color: black;
 }
 
-#outputTable * {
-    padding: 25px;
+#outputTable *{
+    padding: 10px;
 }
 
 #header-table { width: 100%; }
@@ -222,6 +239,8 @@ img {
     color: white;
     transition: all.6s ease-out;
 }
+
+
 
 #logo:hover {
     color: gold;

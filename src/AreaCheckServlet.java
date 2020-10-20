@@ -39,7 +39,7 @@ public class AreaCheckServlet extends HttpServlet {
         Double[] xInterval = {-3.0, -2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0, 5.0};
         Double[] rInterval = {1.0, 2.0, 3.0, 4.0, 5.0};
         if (key.equals("button"))
-            return (Arrays.asList(xInterval).contains(x) && (y > -5 && y < 3) && Arrays.asList(rInterval).contains(r));
+            return (Arrays.asList(xInterval).contains(x) && (y >= -3 && y <= 5) && Arrays.asList(rInterval).contains(r));
         else if (key.equals("svg")) return (Arrays.asList(rInterval).contains(r));
         else return false;
     }

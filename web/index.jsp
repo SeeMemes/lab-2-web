@@ -51,61 +51,67 @@
   <table>
     <tr>
       <td>
-        <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+        <svg width="350" height="350" xmlns="http://www.w3.org/2000/svg" id="drawing" viewBox="0 0 600 600" margin-left="auto" margin-right="auto">
           <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
           <g>
-            <title>Layer 1</title>
-            <path id="svg_37" d="m199.65515,299.62284l199.65523,199.68755l0,-200.00002" opacity="0.5" fill-opacity="null" stroke-width="NaN" stroke="#000000" fill="#00ffff"/>
-            <path id="svg_36" d="m200.34481,299.62284c0,0 199.31037,-190.34485 199.31037,-190.34485c0,0 0,190.34485 0,190.34485" opacity="0.5" stroke-width="NaN" stroke="#00ffff" fill="#00ffff"/>
-            <rect id="svg_16" height="200" width="200" y="299.62284" x="399.65517" stroke-width="0" fill="#5fbf00"/>
-            <line id="svg_2" y2="599.60936" x2="400" y1="0.32369" x1="399.64286" stroke-width="1.5" stroke="#000" fill="none"/>
-            <line id="svg_3" y2="200.32368" x2="966.78567" y1="199.60939" x1="966.78567" stroke-width="1.5" stroke="#000" fill="none"/>
-            <line id="svg_4" y2="300" x2="700" y1="300" x1="100" stroke-width="1.5" stroke="#000" fill="none"/>
-            <line id="svg_6" y2="15" x2="385" y1="0.32355" x1="399.64284" stroke-width="1.5" stroke="#000" fill="none"/>
-            <line id="svg_7" y2="15" x2="385" y1="0.32355" x1="399.64284" stroke-width="1.5" stroke="#000" fill="none"/>
-            <line transform="rotate(-90 407.3215942382813,7.661773204803439) " id="svg_11" y2="15" x2="400.00001" y1="0.32355" x1="414.64284" stroke-width="1.5" stroke="#000" fill="none"/>
-            <line transform="rotate(-90 692.3275146484376,291.9468383789063) " id="svg_12" y2="299.28582" x2="685.00013" y1="284.60936" x1="699.64297" stroke-width="1.5" stroke="#000" fill="none"/>
-            <line id="svg_13" y2="315.00003" x2="685.00003" y1="300.32358" x1="699.64287" stroke-width="1.5" stroke="#000" fill="none"/>
-            <line id="svg_14" y2="315.00003" x2="685.00003" y1="300.32358" x1="699.64287" stroke-width="1.5" stroke="#000" fill="none"/>
-            <line stroke="#000000" id="svg_17" y2="290" x2="599.65519" y1="310" x1="600" fill="none"/>
-            <line stroke="#000000" id="svg_18" y2="290" x2="499.65518" y1="310" x1="499.99999" fill="none"/>
-            <line stroke="#000000" id="svg_19" y2="290" x2="299.65516" y1="310" x1="299.99997" fill="none"/>
-            <line stroke="#000000" id="svg_20" y2="290" x2="199.65515" y1="310" x1="199.99996" fill="none"/>
-            <line transform="rotate(90 399.82965087890625,390.3463439941407) " stroke="#000000" id="svg_23" y2="380.34484" x2="399.65517" y1="400.34484" x1="399.99998" fill="none"/>
-            <line transform="rotate(90 399.8296508789063,500.00335693359375) " stroke="#000000" id="svg_24" y2="490.00002" x2="399.65517" y1="510.00002" x1="399.99998" fill="none"/>
-            <line transform="rotate(90 399.8296508789063,190.3444519042969) " stroke="#000000" id="svg_25" y2="180.34482" x2="399.65517" y1="200.34482" x1="399.99998" fill="none"/>
-            <line transform="rotate(90 399.82965087890625,109.65522766113286) " stroke="#000000" id="svg_26" y2="99.65515" x2="399.65517" y1="119.65515" x1="399.99998" fill="none"/>
-            <path id="svg_28" d="m199.65515,299.62284" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="null" stroke="#000000" fill="none"/>
-            <path id="svg_30" d="m199.65515,299.62284" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="null" stroke="#000000" fill="none"/>
-            <path stroke="#000000" id="svg_33" d="m199.65514,299.27799c2.06897,-184.15903 200.68969,-189.65632 200.34489,-189.96765" opacity="0.5" stroke-opacity="null" stroke-width="NaN" fill="#00ffff"/>
-            <path id="svg_34" d="m200.34481,299.62284" opacity="0.5" stroke-opacity="null" stroke-width="NaN" stroke="#000000" fill="#00ffff"/>
-            <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_38" y="118.24351" x="415.51724" fill-opacity="null" stroke-width="0" stroke="#000000" fill="#000000">R</text>
-            <text style="cursor: move;" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_39" y="198.24352" x="415.51724" fill-opacity="null" stroke-width="0" stroke="#000000" fill="#000000">R/2</text>
-            <text style="cursor: move;" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_40" y="281.00215" x="480.34484" fill-opacity="null" stroke-width="0" stroke="#000000" fill="#000000">R/2</text>
-            <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_41" y="281.00215" x="590.00002" fill-opacity="null" stroke-width="0" stroke="#000000" fill="#000000">R</text>
+            <path fill="#00ffff" stroke="#000000" stroke-width="NaN" fill-opacity="null" opacity="0.5" d="m99.63031,299.62284l199.65523,199.68755l0,-200.00002" id="svg_37"/>
+            <path fill="#00ffff" stroke="#00ffff" stroke-width="NaN" opacity="0.5" d="m100.31997,299.62284c0,0 199.31037,-190.34485 199.31037,-190.34485c0,0 0,190.34485 0,190.34485" id="svg_36"/>
+            <rect fill="#5fbf00" stroke-width="0" x="299.63033" y="299.62284" width="200" height="200" id="svg_16"/>
+            <line fill="none" stroke="#000" stroke-width="1.5" x1="299.61802" y1="0.32369" x2="299.97516" y2="599.60936" id="svg_2"/>
+            <line fill="none" stroke="#000" stroke-width="1.5" x1="966.78567" y1="199.60939" x2="966.78567" y2="200.32368" id="svg_3"/>
+            <line fill="none" stroke="#000" stroke-width="1.5" x1="-0.02484" y1="300" x2="599.97516" y2="300" id="svg_4"/>
+            <line fill="none" stroke="#000" stroke-width="1.5" x1="299.618" y1="0.32355" x2="284.97516" y2="15" id="svg_6"/>
+            <line fill="none" stroke="#000" stroke-width="1.5" x1="299.618" y1="0.32355" x2="284.97516" y2="15" id="svg_7"/>
+            <line fill="none" stroke="#000" stroke-width="1.5" x1="314.618" y1="0.32355" x2="299.97517" y2="15" id="svg_11" transform="rotate(-90 307.2966918945313,7.661773204803439) "/>
+            <line fill="none" stroke="#000" stroke-width="1.5" x1="599.61813" y1="284.60936" x2="584.97529" y2="299.28582" id="svg_12" transform="rotate(-90 592.3027343750001,291.9468383789063) "/>
+            <line fill="none" stroke="#000" stroke-width="1.5" x1="599.61803" y1="300.32358" x2="584.97519" y2="315.00003" id="svg_13"/>
+            <line fill="none" stroke="#000" stroke-width="1.5" x1="599.61803" y1="300.32358" x2="584.97519" y2="315.00003" id="svg_14"/>
+            <line fill="none" x1="499.97516" y1="310" x2="499.63035" y2="290" id="svg_17" stroke="#000000"/>
+            <line fill="none" x1="399.97515" y1="310" x2="399.63034" y2="290" id="svg_18" stroke="#000000"/>
+            <line fill="none" x1="199.97513" y1="310" x2="199.63032" y2="290" id="svg_19" stroke="#000000"/>
+            <line fill="none" x1="99.97512" y1="310" x2="99.63031" y2="290" id="svg_20" stroke="#000000"/>
+            <line fill="none" x1="299.97514" y1="400.34484" x2="299.63033" y2="380.34484" id="svg_23" stroke="#000000" transform="rotate(90 299.80474853515625,390.3463439941407) "/>
+            <line fill="none" x1="299.97514" y1="510.00002" x2="299.63033" y2="490.00002" id="svg_24" stroke="#000000" transform="rotate(90 299.8047485351563,500.00335693359375) "/>
+            <line fill="none" x1="299.97514" y1="200.34482" x2="299.63033" y2="180.34482" id="svg_25" stroke="#000000" transform="rotate(90 299.8047485351563,190.3444519042969) "/>
+            <line fill="none" x1="299.97514" y1="119.65515" x2="299.63033" y2="99.65515" id="svg_26" stroke="#000000" transform="rotate(90 299.8047485351563,109.65522766113284) "/>
+            <path fill="none" stroke="#000000" stroke-width="null" stroke-opacity="null" fill-opacity="null" opacity="0.5" d="m99.63031,299.62284" id="svg_28"/>
+            <path fill="none" stroke="#000000" stroke-width="null" stroke-opacity="null" fill-opacity="null" opacity="0.5" d="m99.63031,299.62284" id="svg_30"/>
+            <path fill="#00ffff" stroke-width="NaN" stroke-opacity="null" opacity="0.5" d="m99.6303,299.27799c2.06897,-184.15903 200.68969,-189.65632 200.34489,-189.96765" id="svg_33" stroke="#000000"/>
+            <path fill="#00ffff" stroke="#000000" stroke-width="NaN" stroke-opacity="null" opacity="0.5" d="m100.31997,299.62284" id="svg_34"/>
+            <text fill="#000000" stroke="#000000" stroke-width="0" fill-opacity="null" x="315.4924" y="118.24351" id="svg_38" font-size="24" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve">R</text>
+            <text fill="#000000" stroke="#000000" stroke-width="0" fill-opacity="null" x="315.4924" y="198.24352" id="svg_39" font-size="24" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve">R/2</text>
+            <text fill="#000000" stroke="#000000" stroke-width="0" fill-opacity="null" x="380.32" y="281.00215" id="svg_40" font-size="24" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve">R/2</text>
+            <text fill="#000000" stroke="#000000" stroke-width="0" fill-opacity="null" x="489.97518" y="281.00215" id="svg_41" font-size="24" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve">R</text>
           </g>
         </svg>
       </td>
-      <td>
-        <form id="info-form" name="info_form" class="box" onsubmit="return check(event)" method="post">
-          <p>X: </p>
-          <%  for (int x = -3; x <= 5; x++) { %>
-              <button type="button" name="x" value="<%=x%>" id="x<%=x%>" class="button"><%=x%></button>
-          <% } %>
-          <br/> <p>Y: </p> <input type="text" name="Y-value" id="Y-value" maxlength="7" placeholder=" (-3;5) ">
-          <br/>
-          <p>R: </p>
-          <%  for (int x = 1; x <= 5; x++) { %>
-            <button type="button" name="r" value="<%=x%>" id="r<%=x%>" class="button"><%=x%></button>
-          <% } %>
-          <br/>
-          <input type="submit" name="" id="coordinates-submit" value="Submit"/>
+    </tr>
+    <tr>
+        <td>
+          <form id="info-form" name="info_form" class="box" onsubmit="return check(event)" method="post">
+            <p>X: </p>
+            <%  for (int x = -3; x <= 5; x++) { %>
+                <button type="button" name="x" value="<%=x%>" id="x<%=x%>" class="button"><%=x%></button>
+            <% } %>
+            <br/> <p>Y: </p> <input type="text" name="Y-value" id="Y-value" maxlength="7" placeholder=" (-3;5) ">
+            <br/>
+            <p>R: </p>
+            <%  for (int x = 1; x <= 5; x++) { %>
+              <button type="button" name="r" value="<%=x%>" id="r<%=x%>" class="button"><%=x%></button>
+            <% } %>
+            <br/>
+            <input type="submit" name="" id="coordinates-submit" value="Submit"/>
 
-        </form>
-      </td>
+          </form>
+        </td>
+    </tr>
+  </table>
+  <br/>
+  <table>
+    <tr>
       <td colspan="5" id="outputContainer">
         <h4>
-          <span class="outputStub notification">Результаты отсутствуют</span>
+          <span class="outputStub notification">Введите данные чтобы посмотреть таблицу</span>
         </h4>
       </td>
     </tr>

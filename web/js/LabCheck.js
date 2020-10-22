@@ -78,6 +78,7 @@ function sendRequest(key) {
             body: request
         }).then(response => response.text()).then(function (serverAnswer) {
             document.getElementById("outputContainer").innerHTML = serverAnswer;
+            setPointer(x_pos*(600/width), y_pos*(600/height));
         }).catch(err => createNotification(`Ошибка HTTP ${err.textContent}. Повторите попытку позже.`));
     } else throw new Error("Не указан ключ отправки");
 }

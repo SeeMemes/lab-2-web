@@ -22,17 +22,13 @@ public class AreaCheckServlet extends HttpServlet {
                     "<th>Текущее время</th></tr>");
         }
 
-        String x = req.getParameter("x")==null ? "n/d" : req.getParameter("x");
-        String y = req.getParameter("y")==null ? "n/d" : req.getParameter("y");
-        String r = req.getParameter("r")==null ? "n/d" : req.getParameter("r");
-        String key = req.getParameter("key");
+        String x = req.getParameter("x")==null ? "null" : req.getParameter("x");
+        String y = req.getParameter("y")==null ? "null" : req.getParameter("y");
+        String r = req.getParameter("r")==null ? "null" : req.getParameter("r");
+        String key = req.getParameter("key")==null ? "null" : req.getParameter("key");
         PrintWriter writer = resp.getWriter();
-        if (x.equals("n/d") || y.equals("n/d") || r.equals("n/d")) {
-            tableRows.add("<tr><td>" + x + "</td>" +
-                    "<td>" + y + "</td>" +
-                    "<td>" + r + "</td>" +
-                    "<td style='color: red" + "'>" + false + "</td>" +
-                    "<td>" + new Date().toString() + "</td></tr>");
+        if (x.equals("null") || y.equals("null") || r.equals("null") || key.equals("null")) {
+            tableRows.add(createNullTableRow(x,y,r));
             for (String tableRow : tableRows) writer.println(tableRow);
         }
         else {
@@ -48,6 +44,14 @@ public class AreaCheckServlet extends HttpServlet {
                 if (writer != null) writer.close();
             }
         }
+    }
+
+    private String createNullTableRow(String x, String y, String r) {
+        return "<tr><td>" + x + "</td>" +
+                "<td>" + y + "</td>" +
+                "<td>" + r + "</td>" +
+                "<td style='color: red" + "'>" + false + "</td>" +
+                "<td>" + new Date().toString() + "</td></tr>";
     }
 
     private boolean checkData(double x, double y, double r, String key) {

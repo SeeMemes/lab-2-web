@@ -1,6 +1,7 @@
 "use strict";
 
 let svg = document.querySelector("svg");
+let x_pos, y_pos;
 
 document.addEventListener("DOMContentLoaded", () => {
     svg.addEventListener("click", (event) => {
@@ -8,9 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
             let position = getMousePosition(svg, event);
             let width = svg.getAttribute("width");
             let height = svg.getAttribute("height")
-            let x_pos = position.x;
-            let y_pos = position.y;
-            setPointer(x_pos*(600/width), y_pos*(600/height));
+            x_pos = position.x;
+            y_pos = position.y;
             let k = width/3 / r; //отношение радиуса и плоскости
             x = ((x_pos-width/2) / k).toFixed(1);
             y = (-(y_pos-height/2) / k).toFixed(1);

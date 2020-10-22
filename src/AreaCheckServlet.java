@@ -21,35 +21,32 @@ public class AreaCheckServlet extends HttpServlet {
                     "<th>Точка входит в ОДЗ</th>" +
                     "<th>Текущее время</th></tr>");
         }
-        try {
-            double x = Double.parseDouble(req.getParameter("x"));
-            double y = Double.parseDouble(req.getParameter("y"));
-            double r = Double.parseDouble(req.getParameter("r"));
-            String key = req.getParameter("key");
-            PrintWriter writer = resp.getWriter();
+
+        String x = req.getParameter("x")==null ? "n/d" : req.getParameter("x");
+        String y = req.getParameter("y")==null ? "n/d" : req.getParameter("y");
+        String r = req.getParameter("r")==null ? "n/d" : req.getParameter("r");
+        String key = req.getParameter("key");
+        PrintWriter writer = resp.getWriter();
+        if (x.equals("n/d") || y.equals("n/d") || r.equals("n/d")) {
+            tableRows.add("<tr><td>" + x + "</td>" +
+                    "<td>" + y + "</td>" +
+                    "<td>" + r + "</td>" +
+                    "<td style='color: red" + "'>" + false + "</td>" +
+                    "<td>" + new Date().toString() + "</td></tr>");
+            for (String tableRow : tableRows) writer.println(tableRow);
+        }
+        else {
+            double x_double = Double.parseDouble(x);
+            double y_double = Double.parseDouble(y);
+            double r_double = Double.parseDouble(r);
             try {
-                if (checkData(x, y, r, key)) {
-                    tableRows.add(new Point(x, y, r).toString());
+                if (checkData(x_double, y_double, r_double, key)) {
+                    tableRows.add(new Point(x_double, y_double, r_double).toString());
                     for (String tableRow : tableRows) writer.println(tableRow);
                 } else resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
             } finally {
                 if (writer != null) writer.close();
             }
-        } catch (NullPointerException | NumberFormatException e) {
-            /*resp.sendError(HttpServletResponse.SC_BAD_REQUEST);*/
-            PrintWriter writer = resp.getWriter();
-            for (String tableRow: tableRows) writer.println(tableRow);
-            try {
-                writer.println("<tr><td>" + Double.parseDouble(req.getParameter("x")) + "</td>");
-            } catch (NullPointerException e1) {writer.println("<tr><td>" + "n/d" + "</td>");}
-            try {
-                writer.println("<td>" + Double.parseDouble(req.getParameter("y")) + "</td>");
-            } catch (NullPointerException e1) {writer.println("<td>" + "n/d" + "</td>");}
-            try {
-                writer.println(Double.parseDouble(req.getParameter("r")));
-            } catch (NullPointerException e1) {writer.println("<td>" + "n/d" + "</td>");}
-            writer.println("<td style='color: red>" + "false" + "</td>");
-            writer.println("<td>" + new Date().toString() + "</td></tr>");
         }
     }
 

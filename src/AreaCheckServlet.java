@@ -36,7 +36,20 @@ public class AreaCheckServlet extends HttpServlet {
                 if (writer != null) writer.close();
             }
         } catch (NullPointerException | NumberFormatException e) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            /*resp.sendError(HttpServletResponse.SC_BAD_REQUEST);*/
+            PrintWriter writer = resp.getWriter();
+            for (String tableRow: tableRows) writer.println(tableRow);
+            try {
+                writer.println("<tr><td>" + Double.parseDouble(req.getParameter("x")) + "</td>");
+            } catch (NullPointerException e1) {writer.println("<tr><td>" + "n/d" + "</td>");}
+            try {
+                writer.println("<td>" + Double.parseDouble(req.getParameter("y")) + "</td>");
+            } catch (NullPointerException e1) {writer.println("<td>" + "n/d" + "</td>");}
+            try {
+                writer.println(Double.parseDouble(req.getParameter("r")));
+            } catch (NullPointerException e1) {writer.println("<td>" + "n/d" + "</td>");}
+            writer.println("<td style='color: red>" + "false" + "</td>");
+            writer.println("<td>" + new Date().toString() + "</td></tr>");
         }
     }
 

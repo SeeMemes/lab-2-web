@@ -21,18 +21,22 @@ public class AreaCheckServlet extends HttpServlet {
                     "<th>Точка входит в ОДЗ</th>" +
                     "<th>Текущее время</th></tr>");
         }
-        double x = Double.parseDouble(req.getParameter("x"));
-        double y = Double.parseDouble(req.getParameter("y"));
-        double r = Double.parseDouble(req.getParameter("r"));
-        String key = req.getParameter("key");
-        PrintWriter writer = resp.getWriter();
         try {
-            if (checkData(x, y, r, key)) {
-                tableRows.add(new Point(x, y, r).toString());
-                for (String tableRow: tableRows) writer.println(tableRow);
-            } else resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
-        } finally {
-            if (writer != null) writer.close();
+            double x = Double.parseDouble(req.getParameter("x"));
+            double y = Double.parseDouble(req.getParameter("y"));
+            double r = Double.parseDouble(req.getParameter("r"));
+            String key = req.getParameter("key");
+            PrintWriter writer = resp.getWriter();
+            try {
+                if (checkData(x, y, r, key)) {
+                    tableRows.add(new Point(x, y, r).toString());
+                    for (String tableRow : tableRows) writer.println(tableRow);
+                } else resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            } finally {
+                if (writer != null) writer.close();
+            }
+        } catch (NullPointerException | NumberFormatException e) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
         }
     }
 

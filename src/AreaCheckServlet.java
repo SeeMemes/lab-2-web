@@ -1,6 +1,7 @@
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
+import java.text.NumberFormat;
 import java.util.*;
 import java.io.*;
 
@@ -22,26 +23,32 @@ public class AreaCheckServlet extends HttpServlet {
                     "<th>Текущее время</th></tr>");
         }
 
-        String x = req.getParameter("x")==null ? "null" : req.getParameter("x");
-        String y = req.getParameter("y")==null ? "null" : req.getParameter("y");
-        String r = req.getParameter("r")==null ? "null" : req.getParameter("r");
-        String key = req.getParameter("key")==null ? "null" : req.getParameter("key");
+        boolean x = req.getParameter("x")==null ? true : false;
+        boolean y = req.getParameter("y")==null ? true : false;
+        boolean r = req.getParameter("r")==null ? true : false;
+        boolean key = req.getParameter("key")==null ? true : false;
         PrintWriter writer = resp.getWriter();
-        if (x.equals("null") || y.equals("null") || r.equals("null") || key.equals("null")) {
-            tableRows.add(createNullTableRow(x,y,r));
-            for (String tableRow : tableRows) writer.println(tableRow);
+        if (x || y || r || key) {
+            writer.println("Ошибка: одно из переданных значений неверно или не отвечает критериям" +
+                    " указанным на главной странице. Попробуйте ввести другие значения");
         }
         else {
-            double x_double = Double.parseDouble(x);
-            double y_double = Double.parseDouble(y);
-            double r_double = Double.parseDouble(r);
             try {
-                if (checkData(x_double, y_double, r_double, key)) {
-                    tableRows.add(new Point(x_double, y_double, r_double).toString());
-                    for (String tableRow : tableRows) writer.println(tableRow);
-                } else resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
-            } finally {
-                if (writer != null) writer.close();
+                double x_double = Double.parseDouble(req.getParameter("x"));
+                double y_double = Double.parseDouble(req.getParameter("y"));
+                double r_double = Double.parseDouble(req.getParameter("r"));
+                try {
+                    if (checkData(x_double, y_double, r_double, req.getParameter("key"))) {
+                        tableRows.add(new Point(x_double, y_double, r_double).toString());
+                        for (String tableRow : tableRows) writer.println(tableRow);
+                    } else resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+                } finally {
+                    if (writer != null) writer.close();
+                }
+            }
+            catch (NumberFormatException e) {
+                writer.println("Ошибка: одно из переданных значений неверно или не отвечает критериям" +
+                        " указанным на главной странице. Попробуйте ввести другие значения");
             }
         }
     }
